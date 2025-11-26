@@ -1,0 +1,161 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111827;
+  --text-muted: #9ca3af;
+  --icon-color: #4b5563;
+  --border-color: #d1d5db;
+  --focus-color: #3b82f6;
+}
+
+.dark {
+  --bg-color: #030712;
+  --text-color: #f3f4f6;
+  --text-muted: #4b5563;
+  --icon-color: #9ca3af;
+  --border-color: #374151;
+  --focus-color: #3b82f6;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Container */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Controls */
+.controls {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-btn {
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  opacity: 0.6;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--icon-color);
+}
+
+/* Dark mode icon toggle */
+.sun-icon {
+  display: none;
+}
+
+.dark .sun-icon {
+  display: block;
+}
+
+.dark .moon-icon {
+  display: none;
+}
+
+/* Loop button active state */
+.repeat-icon.active {
+  color: #3b82f6;
+}
+
+/* Loop input */
+.loop-input {
+  width: 5rem;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  background: transparent;
+  color: var(--text-color);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.loop-input:focus {
+  border-color: var(--focus-color);
+}
+
+.loop-input.hidden {
+  display: none;
+}
+
+/* Counter Area */
+.counter-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-number {
+  font-size: 140px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--text-color);
+}
+
+@media (min-width: 640px) {
+  .counter-number {
+    font-size: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .counter-number {
+    font-size: 280px;
+  }
+}
+
+/* Footer */
+.footer {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.hint-text {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Remove number input spinners */
+.loop-input::-webkit-outer-spin-button,
+.loop-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.loop-input[type="number"] {
+  -moz-appearance: textfield;
+}
