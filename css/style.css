@@ -159,3 +159,34 @@ body {
 .loop-input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/* Sound icon toggle */
+.sound-on-icon {
+  display: none;
+}
+
+.sound-enabled .sound-on-icon {
+  display: block;
+  color: #3b82f6;
+}
+
+.sound-enabled .sound-off-icon {
+  display: none;
+}
+
+/* Counter pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.counter-number.pulse {
+  animation: pulse 0.15s ease-out;
+}
